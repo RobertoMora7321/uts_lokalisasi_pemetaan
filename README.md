@@ -6,18 +6,18 @@ This guide explains how to set up your workspace, build the project, and run Tur
 
 ### 1.1 Create a workspace
 ```bash
-mkdir -p ~/turtlebot4_delivery/src
-cd ~/turtlebot4_delivery/src
+mkdir -p ~/klp1/src
+cd ~/klp1/src
 ```
 
 ### 1.2 Clone the GitHub repository
 ```bash
-git clone https://github.com/MarcellinoAcel/pose_nav_turtle.git
+git clone https://github.com/RobertoMora7321/uts_lokalisasi_pemetaan.git
 ```
 
 ### 1.3 Build using colcon
 ```bash
-cd ~/turtlebot4_delivery
+cd ~/klp1
 colcon build
 ```
 
@@ -46,7 +46,7 @@ ros2 launch turtlebot4_viz view_robot.launch.py
 ssh ubuntu@192.168.185.3
 cd ~/turtlebot4_delivery
 source install/setup.bash
-ros2 launch pose_nav_turtle localization.launch.py map:=src/pose_nav_turtle/maps/map_uts_kel1.yaml
+ros2 launch turtlebot4_navigation localization.launch.py map:=antonajo.yaml
 ```
 
 **In RViz:**
@@ -59,7 +59,7 @@ ros2 launch pose_nav_turtle localization.launch.py map:=src/pose_nav_turtle/maps
 ssh ubuntu@192.168.185.3
 cd ~/turtlebot4_delivery  
 source install/setup.bash
-ros2 launch pose_nav_turtle run_nav.launch.py
+ros2 launch klppoint uts_nav.launch.py
 ```
 
 ## 5. Run Additional Nodes
@@ -67,9 +67,9 @@ ros2 launch pose_nav_turtle run_nav.launch.py
 **(New terminal)** Run custom node:
 ```bash
 ssh ubuntu@192.168.185.3
-cd ~/turtlebot4_delivery
+cd ~/klp1
 source install/setup.bash
-ros2 run pose_nav_turtle pose_nav_turtle
+ros2 run klppoint uts_nav klppoint uts_nav
 ```
 
 ## 🚀 You're Ready!
